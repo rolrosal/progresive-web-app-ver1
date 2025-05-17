@@ -1,6 +1,6 @@
 /*Para poder tener acceso de la pagina fuera de linea, es necesario abrir por lo menos una vez las siguientes 
 paginas: 
-1.abrir la aplicacion de la progressive-web-app.
+1.abrir la aplicacion de la progresive-web-app-ver1.
 2.cuando y abro la aplicacion, acceder al vinculo de protoco handler 
  
 Los protocol handler funcinan para computadoras de escritorios  y laptops.

@@ -1,5 +1,5 @@
 {
-    "id":"https://rolrosal.github.io/progressive-web-app",
+    "id":"https://rolrosal.github.io/progresive-web-app-ver1",
     "name":"Chess MaTe Club",
     "shorte_name":"Chess Mate",
     "description":"Bienvenidos al sitio web para amantes del ajedrez, en el cual encontraras recomendaciones de libros, consejos de aperturas, finales, jaques mates y medio juego",
@@ -113,7 +113,7 @@
     "protocol_handlers":[
      {
     "protocol": "web+micontacto",
-    "url":"http://rolrosal.github.io/progressive-web-app/contacto/?id=%s"
+    "url":"http://rolrosal.github.io/progresive-web-app-ver1/contacto/?id=%s"
 
      }
     ]
