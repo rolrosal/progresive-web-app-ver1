@@ -89,21 +89,21 @@
     },
 
     {
-      "src":"./assets/img/screenshot-wide-1440X2560.png",
+      "src":"./assets/img/screenshot-portrait-1440X2560.png",
       "sizes":"1440x2560",
       "type":"image/png",
       "form_factor":"narrow"
     },
 
     {
-      "src":"./assets/img/screenshot-wide-1080X1920.png",
+      "src":"./assets/img/screenshot-portrait-1080X1920.png",
       "sizes":"1080x1920",
       "type":"image/png",
       "form_factor":"narrow"
     },
 
     {
-      "src":"./assets/img/screenshot-wide-720X1280.png",
+      "src":"./assets/img/screenshot-portrait-720X1280.png",
       "sizes":"720x1280",
       "type":"image/png",
       "form_factor":"wide"
