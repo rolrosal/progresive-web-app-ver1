@@ -52,8 +52,8 @@
      },
 
     {"src": "./assets/img/favicon-16x16.png",
- "sizes":"16x16",
- "type":"image/png"  
+      "sizes":"16x16",
+      "type":"image/png"  
     }
 
     ],
@@ -106,7 +106,7 @@
       "src":"./assets/img/screenshot-portrait-720X1280.png",
       "sizes":"720x1280",
       "type":"image/png",
-      "form_factor":"wide"
+      "form_factor":"narrow"
     }
      ],
 
