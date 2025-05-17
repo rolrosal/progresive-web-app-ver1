@@ -9,7 +9,7 @@ if ("serviceWorker" in navigator ){
 
     /*Porque esta direccion : "/progresive-web-app-ver1./sw.js" si yo la utilizaria en mi dominio principal, 
     que en este caso es godady */
-    navigator.serviceWorker.register("/progresive-web-app-ver1./sw.js")
+    navigator.serviceWorker.register("/progresive-web-app-ver1/sw.js")
 
         /* aqui lo que se hace es manejar esto como una promesa y por eso navigator.serviceWorker.register("./sw.js") 
         no tiene punto y coma y el then tiene el punto antes, porque es parte del navigator. 
