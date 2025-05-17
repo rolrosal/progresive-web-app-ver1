@@ -113,7 +113,7 @@
     "protocol_handlers":[
      {
     "protocol": "web+micontacto",
-    "url":"http://rolrosal.github.io/progresive-web-app-ver1/contacto/?id=%s"
+    "url":"https://rolrosal.github.io/progresive-web-app-ver1/contacto/?id=%s"
 
      }
     ]
