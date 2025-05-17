@@ -1,0 +1,17 @@
+Uso de index en carpetas: Es una buena pracatica que cada seccion de la pagina web este en diferentes carpetas, 
+cada carpeta es bueno que tenga:
+    1.Su propio index.html
+    2.Su propia carpeta de assets:
+        incluye inmagenes, javasctipt y css.
+    3.Su propio archivo css:
+        Esto  es util cuando cada seccion es diferente de la pagina index principal del proyecto
+    
+    Recordar que todo esto aplia si es necesario.
+
+    el archivo sw-register.js se encarga de registrar el service worker.
+     
+     El service worker  se encargara de cargar archivos a la memoria cache.
+
+     En el navegador se puede instalar extenciones que el usuario decide. Pueden se programas
+     o pequeñas aplicaciones. Yo no quiero que estas aplicacioens se metan en mi cache. Por 
+     lo tanto yo las bloqueo.

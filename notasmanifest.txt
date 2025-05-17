@@ -1,0 +1,87 @@
+El manifest su objetivo principal es confirguar para una progressive web app y su enforque.
+Recordemos que el manifest nos permite configurar aspectos relacionados con la instalacion de la 
+progressivewebapp, como url de inicio, orientacion de la pagina(vertical/horizontal),modo de pantalla completa
+etc.
+
+El manifest es para lo que se ralaciona con la instalacion de la webapp, en el dispositivo 
+
+principal es para android. Para apple es todo lo que se puso en el head del html los appel touch y otros.
+
+Los campos se llaman propiedades.
+listado de propiedades
+id: es la que se encarga de identificar a la progressive web app. Es decir que google la identifica como unica. 
+    Esta propiedad evita que se tenga conflicto con otras paginas.
+
+name: es el nombre completo de la progressive web app. debe seguir ciertas limitantes: 30 caracteres. 
+
+short_name: el nombre de la pagina. muy corto, y recordemos que se instala en un movil.Por eso se usa Est
+propiedad y no dbebe pasar de 15 caracteres.
+
+description: En este caso no puede pasar de 200 caracteres. y describe lo que ofrece la pagina.
+
+backgroud_color: es la propieda de color que queremos que tenga. define el color de la pantalla de inicio.
+
+theme_color: es el color de la barra de estado y de la barra de direccion 
+
+orientation: Esa propiedad indica al dispositivo en que orientacion deseamos que se habra la aplicacion
+    any:Cualquiera puede usarse.
+    
+    natural:Respeta la orientacion natural del dispositivo.
+    
+    portrait:Modo retrato o vertical.Esta es la mas comun para aplicaciones.
+    
+    portrait-primary: Esta se habre en modo retrato como orientacion principal. Pero si el usuario
+    
+    gira el dispositivo 180 grados, la orientacion cambiara a portrait-secundary.
+    
+    portrait-secondary: La orientacin principal va a ser en modo retrato pero girado 180 grados, es decir al reves.
+    
+    landscape:Este es modo paisaje. Esta se usa para aplicaciones de videojuegos. 
+    
+    landscape-primary:Su orientacion principal sera el modo landscape. Si lo gira 180 grados cambiara
+    a landscape-secondary.
+    
+    landscape-secondary:Su orientacion principal sera el modo landscape, girado 180 grados.
+
+display:Nos permite controlar o como la va a visualizar el usuario.
+    fullscreen: Esta es muy usada para video juego y utilizar todo el ancho y largo del dispositivo, sin 
+    barra de direcciones y controles.
+    
+    standalone:Hace que se muestre como una aplicacion nativa, por lo que se habre en una ventana independiente
+    con su propia barra de titulo y sin los controles de navegador.
+    
+    minimal-ui: Es similar a standalone pero incluye algunos botones, como el de ir atras, y el boton de actualizar
+    pagina.
+
+    browser:Se muestra como si se habriera en un navegador, mostrando barra de direcciones y controles del navegador.
+
+start_url:Este parametro nos es util para definir la url que cargara al inicio en nuestra progressive-web_app_manifest
+pero si se agrega este parametro:"./?utm_source=web_app_manifest", permite  ver estadisticas.
+
+scope:"./" esto indica el ambito que se toman en cuenta para mi aplicacion. Es decir que se tomen todos los archivos
+ que estan en mi carpeta. 
+
+lang:es el idioma de la aplicacion: "es-GT". Esto quiere decir que es español en guatemala 
+
+icons:Son los iconos para la instalacion de la aplicacion en el dispositivo, que se veran en el dispositivos.
+
+screenshots:Esto sirve para que el usuario antes de descargar pueda ver que es lo que tiene la pagina web.
+en el screesnshots se usa la propiedad form_factor, para indicar en que dispositivo se debe mostrar cada imagen.
+    
+    wide: este es para dispositivos mas anchos que altos.(relacion 16:9 es la de pantallas para television o pantallas
+    de desktop)
+
+    narrow: estas son para dispositivos mas altos que anchos.(relacion 9:16 )
+
+protocol_handlers: Existen varios tipos de protocolos. Los que estamos poniendo aqui son para que se 
+utilize  en una  progressiv-web-app. Cuando es personalizado el protocolo se recomienda que al inicio sea "web+"
+y luego el nombre que quiera.
+
+
+con el protocor-handler que es un javascript manejamos los datos que queremos mandar.
+
+
+
+
+
+

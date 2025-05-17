@@ -1,0 +1,123 @@
+/* Custom Properties */
+:root {
+  --main-color: #f0db4f;
+  --main-modal-color: rgba(240, 219, 79, 0.5);
+  --second-color: #2b2b2b;
+  --second-modal-color: rgba(43, 43, 43, 0.5);
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 1.5rem auto;
+  overflow-x: hidden;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+a {
+  font-weight: bold;
+  color: var(--second-color);
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  color: var(--second-modal-color);
+}
+
+p {
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+::selection {
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+nav {
+  display: flex; /* Hace que la barra de navegación sea flexible */
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los elementos en la línea */
+  margin-bottom: 20px; /* Espacio entre la barra de navegación y otros elementos */
+}
+
+nav a {
+  flex: 1 1 auto;
+  min-width: 100px; /* Establece un ancho mínimo para los enlaces */
+  padding: 10px; /* Espaciado interno para los enlaces */
+}
+
+h1 {
+  word-wrap: break-word;
+
+  /* Esta propiedad reempaza a la propiedad "word-wrap".  */
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+header img {
+  margin: 0 auto;
+  display: block;
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+footer {
+  text-align: center;
+}
+
+nav {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+header nav a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #4b4b4b;
+}
+
+.main-index {
+  position: relative;
+  margin: 1rem auto;
+
+  padding-bottom: 56.25%; /* 16:9 */
+}
+
+main {
+  position: relative;
+  margin: 1rem 2rem;
+}
+
+main iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

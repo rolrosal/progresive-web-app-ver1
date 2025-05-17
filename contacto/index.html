@@ -1,0 +1,365 @@
+<!DOCTYPE html> <!-- Indica la versión de lenguaje de marcado HTML con la que se está trabajando. -->
+<html lang="es"> <!-- Se define el lenguaje que se utilizará en el Sitio Web. El agoritmo de Google utiliza esta
+información para realizar la indexación correcta del Sitio Web en los motores de búsqueda, provocando un impacto positivo en el CEO.
+Si se quisiera diseñar un sitio Web para un sitio Web con características (palabras, frases, modismos,etc. ) muy particualares de un país,
+se puede hacer más específico el lenguaje. Ej: lang="es-GT", donde además del código del lenguaje "es" se indica el dominio que representa
+a ese país. Para el caso de Guatemala, el dominio es "GT". Pero esto no es normalmente recomendable, salvo que se necesiten características específicas y
+enfocadas a un país en particular. -->
+
+
+    <head>
+        <meta charset="UTF-8"> <!-- Conjunto de caracteres de la página Web(char set). Este es el conjunto de caracteres más completo. Permite
+        que los símbolos especiales como las "ñ", las dildes, diéresis, acento circunflejo, grave, etc., se muestre correctamente en el sitio Web. -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- El "viewport" es la zona visible del navegador, es decir, el área donde se renderiza
+        el contenido del sitio Web dentro del navegador. Esta etiqueta le indica al navegador de qué manera se adaptará el contenido del sitio Web al tamaño
+        del dispositivo. 
+        
+        "width=device-width"   ->  Indica que el ancho del "viewport" será igual al ancho del dispositivo en el cual se abra el sitio Web.
+        "initial-scale=1.0"  ->  Indica a qué escala se abrirá el contenido, siempre se abrirá a la escala original "initial-scale=1.0".
+
+        Esta etiqueta permite que el sitio Web sea responsive(adaptable a diferentes tamaños de pantalla).
+        -->
+        <title>Chess Mate Club</title> <!-- Es recomendable que el título tenga como máximo 55 o 65 caracteres. Esto se debe a que tanto el título
+            como la descripción de la etiqueta meta name="description" son las que se muestran en el buscador de Google. Cuando la cantidad máxima de caracteres
+            recomendada se supera, eso provocará que los resultados de las búsquedas de Google que correspondan a la página, muestren incompletos el título y la descripción,
+            mostrando puntos suspensivos para indicar que hay más texto, pero que no cabe en el espacio que Google asigna
+            para mostrar la información de la página.
+            -->
+            
+        <!-- Permite identificar al autor del sitio Web. -->
+        <meta name="author" content="Jose Rosales" />
+        
+        <!--este autor es mas completo y utiliza un archivo txt-->
+        <!--rel es lo que esta relacionado con el author y el humans es esl nombre sugerido-->
+        <link rel="author" type="text/plain" href="../assets/humans.txt">
+
+        <!-- Permite indicar quiénes tendrán los derechos sobre el sitio Web. -->
+        <meta name="copyright" content="Jose Rosales" />
+        
+        <!-- Se recomienda que la descripción tenga como máximo 165 caracteres. -->
+        <meta name="description" content="Bienvenidos al sitio web para amantes del ajedrez, en el cual encontraras
+        recomendaciones de libreos , consejos de apertura,finales,jaque mates y medio juego ."/>  <!-- Se recomienda que la descripción tenga como máximo 165 caracteres. -->
+        <!--el rel debe de llevar icon para que el navegador comprenda que va en la barra de navegador -->
+        <!--en type se debe especifcar que es una imagen y la diagonal para especificar que tipo de png-->
+        <!--en el nombre, que va en href siempre poner el tamaño del a imagen y ademas ponerle que es para el favicon-->
+       
+        <!--simepre poner en el head y despues de los meta, y se debe de poner los tamaños para cada dispositivo -->
+        <!--el navegador esocje el mas adecuado para el dispositivo -->
+
+         <!----------------------------clase numero 7------------------------------------->   
+         
+         <!--Estas etiquetas son para dispositivos android y sirve para que se comporte como una -->
+         <!--aplicacion. Esto significa que al agregar el sitio web a la pantalla de inicio -->
+         <!---y abrir la aplicacion se muestre en pantalla completa sin barra de dierecciones -->
+         <!--aplicacion en dispositivos android-->
+         <meta name="mobile-web-app-capable" content="yes">
+         
+         <!--lo mismo para dispositivos ios-->
+         <meta name="apple-mobile-web-app-capable" content="yes">
+ 
+        <!-- ESTAS ETIQUETAS SON SOLAMENTE PARA IPHONE
+         Nos permite controlar el nombre que aparece en el icono del sitio web instalado en la 
+         pantalla de inicio del mobil que son iphone. el content mostrara el titulo que se quiere que aparesca
+         se recomienda entre 12 y 15 caracteres-->
+         <meta name="apple-mobile-web-app-title" content="Chess Mate Club">
+
+         <!--Para que la barra de estado del mobil  que muestra bateria hora etc. pueda ser manipulada
+         y cambiar los estilos, solo hay 3 posibles: default que el determinado, el black que es el solido  
+         y el black-traslucent que es un negro traslucido  este es el que usaremos -->
+ 
+         <meta name="apple-mobile-web-app-status-bar-style" conten="black-traslucent">
+
+         <!--Esta etiqueta es para que cuando carga nuesra pagina nosotros le controlamos que imagen va 
+         a mostrar mientras carga
+          iPhone 6,7,8,se (2 generacion ) retina @2x-->
+
+        <link rel="apple-touch-startup-image" href="../assets/img/startup-image-750x1334@2x.png"
+            media="(device-width:375px)and (device-height:667px) and (-webkit-device-pixel-ratio:2)">
+
+        <!--iphone x, xs, 11 pro, 12, 12 pro, 13, 13 pro- Retina @x3-->
+        <link rel="apple-touch-startup-image" href="../assets/img/startup-image-1125x2436@3x.png"
+            media="(device-width:375px)and (device-height:812px) and (-webkit-device-pixel-ratio:3)"> 
+        
+        <!--iPad 9.7 , macbook Air-Retina @2x-->     
+        <link rel="apple-touch-startup-image" href="../assets/img/startup-image-768x1024@2x.png"
+            media="(device-width:768px)and (device-height:1024px) and (-webkit-device-pixel-ratio:2)">    
+         
+
+
+         <!--FIN ETIQUETAS SOLO PARA IPHONE-->
+ 
+         <!--Esta etiqueta si es para android y es cambier el color de la bara de direccion, barra de estado -->
+         <meta name="theme-color" color="#27A198">
+
+
+         <!--estas etiquetas estan obsoletas
+            <meta name="MobileOptimized content="width>
+            <meta name="HandheldFriendly" content="true">
+         -->
+
+         
+
+        
+
+
+
+        <!--------------------------ESTO ES OTRA COSA etiquetas favaicons----------------------------- -->
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="16x16"
+        href="../assets/img/favicon-16x16.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="32x32"
+        href="../assets/img/favicon-32x32.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="48x48"
+        href="../assets/img/favicon-48x48.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="64x64"
+        href="../assets/img/favicon-64x64.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="76x76"
+        href="../assets/img/favicon-76x76.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="96x96"
+        href="../assets/img/favicon-96x96.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="120x120"
+        href="../assets/img/favicon-120x120.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="144x144"
+        href="../assets/img/favicon-144x144.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="152x152"
+        href="../assets/img/favicon-152x152.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="167x167"
+        href="../assets/img/favicon-167x167.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="180x180"
+        href="../assets/img/favicon-180x180.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="192x192"
+        href="../assets/img/favicon-192x192.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="256x256"
+        href="../assets/img/favicon-256x256.png"     >
+        
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="384x384"
+        href="../assets/img/favicon-384x384.png"
+        >
+        <link 
+        rel="icon"
+        type="image/png" 
+        size="512x512"
+        href="../assets/img/favicon-512x512.png"
+        >
+    <!----------------------------ahor pondremos las etiquetas apple touch icon ------------------------->
+        <link 
+        rel="apple-touch-icon"
+        size="57x57"
+        href="../assets/img/apple-touch-icon-57x57.png"
+        >
+
+        
+        <link 
+        rel="apple-touch-icon"
+        size="60x60"
+        href="../assets/img/apple-touch-icon-60x60.png"
+        >
+
+        <link 
+        rel="apple-touch-icon"
+        size="72x72"
+        href="../assets/img/apple-touch-icon-72x72.png"
+        >
+
+        <link 
+        rel="apple-touch-icon"
+        size="114x114"
+        href="../assets/img/apple-touch-icon-114x114.png"
+        >
+
+        <link 
+        rel="apple-touch-icon"
+        size="120x120"
+        href="../assets/img/apple-touch-icon-120x120.png"
+        >
+
+        <link 
+        rel="apple-touch-icon"
+        size="144x144"
+        href="../assets/img/apple-touch-icon-144x144.png"
+        >
+
+        <link 
+        rel="apple-touch-icon"
+        size="152x152"
+        href="../assets/img/apple-touch-icon-152x152.png"
+        >
+
+        <link 
+        rel="apple-touch-icon"
+        size="167x167"
+        href="../assets/img/apple-touch-icon-167x167.png"
+        180
+        <link 
+        rel="apple-touch-icon"
+        size="180x180"
+        href="../assets/img/apple-touch-icon-180x180.png"
+        >
+
+    
+
+
+
+
+      
+
+        <!--vinculo a  hoja exeterna-->
+        <link rel="stylesheet" href="../assets/css/main.css">
+
+        <!--css propio-->
+        <link rel="stylesheet" href="./assets/css/contacto.css">
+
+        <!--El manifest es necesario para poder controlar diferentes aspectos de nuestra progressive
+        webapp o pagina web en dispositivos android.Es decir para que nuesro sitio web se comporte como una
+        app nativa . El manifest va en la carpeta raiz de nuestra pagina y en formato json-->
+        <!--Para que nos sirve el manifest:
+            1-Permite definir la apariencia de la progressive webapp: colores,iconos y diseño de la aplicacion
+
+            2-Controla el comportamiento: url de inicio, orientacion, modo de pantalla completa, etc
+
+            3-Permite la instalacion en androdid. -->
+
+           <link rel="manifest" href="../manifest.json">
+           
+           
+           <!--este es para las fuentes que queremos que se apliquen en toda la hoja  -->
+           <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+   
+           
+
+           <!--con este script importo los items de la pagina fontawesome.com
+           el crossorigin  para que no de alerta. y esto es porque es privado el link -->
+           <!--esto se hace si lo quiero tener en linea 
+           <script "https://kit.fontawesome.com/f1bff8ec54.js"
+                crossorigin="anonymous">
+           </script> Aqui abajo es que yo lo tengo sin necesidad de estar en internet
+           Esta es la mejor forma si se va el internet o desaparece el sitio yo tengo los iconos -->
+           <script src="../assets/icons/kit-fontawesomeicons.js"></script>
+           
+
+    </head>
+
+    <body>
+        <header>
+            <h1>Chess Mate Club</h1>
+
+            <nav>
+                <!--con el ../ lo que indica es :busque en la carpeta del nivel superiro el el archivo index
+                no hace falta poner la direcion y el nombre  index.html-->
+                <a href="../" target="_self" title="Inicio"> Inicio</a>
+
+                <!--en este caso ../mates indica:debe de ir a carpeta mates y el segundo / indica que debe 
+                buscar dentro de la carpeta el index.html-->
+                <a href="../mates/" target="_self" title="Jaque Mates">Mates</a>
+            
+                <a href="../aperturas/" target="_self" title="Aperturas">Aperturas</a>
+
+                <a href="../libros/" target="_self" title="Libros">Libros</a>
+            </nav>
+
+           
+           
+
+
+        </header>
+        <h2 id="contact-id" class="contact-param-id">
+            <p id="contact-info"></p>
+
+        </h2>
+        
+        <script>
+
+        </script>
+
+    <footer>
+        <nav>
+            <a href="https://youtu.be/_deujLjHAk0?si=a_7I3VnPUFbTkGgZ"
+            target="_blank"
+            title="Youtube">
+
+            <!--esto se trae de https://fontawesome.com/icons -->
+            <i class="fa-brands fa-square-youtube"></i>
+            
+        </a>
+
+        <a href="https://facebook.com/ProgramadorFitness"
+            target="_blank"
+            title="Facebook">
+
+        <!--esto se trae de https://fontawesome.com/icons-->
+        <i class="fa-brands fa-square-facebook"></i>
+
+        </a>
+
+        <!--esto se trae de https://fontawesome.com/icons-->
+        <a href="https://www.instagram.com/explore/tags/ProgramadorFitness"
+            target="_blank"
+            title="Instagram">
+
+            <i class="fa-brands fa-square-instagram"></i>
+    </a>
+
+
+        </nav>
+    </footer>
+
+    <!--referencia al script del service worker-->
+    <script src="../sw-register.js"></script>
+    <script src="./assets/js/protocol-handler.js"></script>
+    </body>
+
+</html>     
