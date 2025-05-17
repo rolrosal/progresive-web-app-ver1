@@ -61,7 +61,7 @@
     "screenshots":[
     {
       "src":"./assets/img/screenshot-wide-2560X1440.png",
-      "size":"2560x1440",
+      "sizes":"2560x1440",
       "type":"image/png",
       "form_factor":"wide"
     },
@@ -69,42 +69,42 @@
 
     {
       "src":"./assets/img/screenshot-wide-1920X1080.png",
-      "size":"1920x1080",
+      "sizes":"1920x1080",
       "type":"image/png",
       "form_factor":"wide"
     },
 
     {
       "src":"./assets/img/screenshot-wide-1600X900.png",
-      "size":"1600x900",
+      "sizes":"1600x900",
       "type":"image/png",
       "form_factor":"wide"
     },
 
     {
       "src":"./assets/img/screenshot-wide-1280X720.png",
-      "size":"1280x720",
+      "sizes":"1280x720",
       "type":"image/png",
       "form_factor":"wide"
     },
 
     {
       "src":"./assets/img/screenshot-wide-1440X2560.png",
-      "size":"1440x2560",
+      "sizes":"1440x2560",
       "type":"image/png",
       "form_factor":"narrow"
     },
 
     {
       "src":"./assets/img/screenshot-wide-1080X1920.png",
-      "size":"1080x1920",
+      "sizes":"1080x1920",
       "type":"image/png",
       "form_factor":"narrow"
     },
 
     {
       "src":"./assets/img/screenshot-wide-720X1280.png",
-      "size":"720x1280",
+      "sizes":"720x1280",
       "type":"image/png",
       "form_factor":"wide"
     }
