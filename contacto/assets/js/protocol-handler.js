@@ -42,7 +42,9 @@ if(rawContactoId){
     const contactoId= rawContactoId.replace("web+micontacto://","")
     
     /*aqui quito el / y agrego un "" */
-    contactoId=contactoId.replace("/","");
+   /* contactoId=contactoId.replace("/","");*/
+
+   .replace("/","");
 
     document.getElementById("contact-id").textContent = `ID:${contactoId}` ;
     
