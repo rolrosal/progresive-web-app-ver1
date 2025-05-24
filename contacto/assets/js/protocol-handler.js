@@ -58,9 +58,8 @@ if(rawContactoId){
             document.getElementById("contact-info").textContent=`Nombre: Jose Rosales Monterroso`;
         } else if (contactoId == 200){
                     console.log("estoy en 200");
+                   
                     document.getElementById("contact-info").textContent=`Nombre: Boby Fischer`;
                 }         
-          else {
-            console.log("no es nada");
-          }                    
+                          
 }
