@@ -7,8 +7,8 @@
     "theme_color":"#F0DB4F",
     "orientation":"portrait",
     "display":"standalone",
-    "start_url":"./?utm_source=web_app_manifest",
-    "scope":"./",
+    "start_url":"/progresive-web-app-ver1/?utm_source=web_app_manifest",
+    "scope":"/progresive-web-app-ver1/",
     "lang":"es_GT",
     "icons":[
         {"src": "./assets/img/favicon-512x512.png",

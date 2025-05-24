@@ -113,33 +113,38 @@ const CACHE_NAME = "v1_chess_mate_club",
 self.addEventListener("install", (e) => {
   console.log("Service Worker installing...");
  
-  /* aqui lo que digo que e debe esperar hasta tener una respuesta.esto es una promesa  */
-  e.waitUntil(
-    caches/*es un objeto de javascript  y luego voy accediendo a sus metodos poniendo antes el putno */
-      
-      /*este metodo puede habrir una memoria chache o crear una memoria cache,en esge caso la cree*/
-      .open(CACHE_NAME)
+    /* aqui lo que digo que e debe esperar hasta tener una respuesta.esto es una promesa  */
+    e.waitUntil(
+      caches/*es un objeto de javascript  y luego voy accediendo a sus metodos poniendo antes el putno */
+        
+        /*este metodo puede habrir una memoria chache o crear una memoria cache,en esge caso la cree*/
+        .open(CACHE_NAME)
 
-      /*el metodo then dice cuando obtengas una respuesta que es la memoria cache creado por el metodo open 
-      entonces , haga algo :    */
-      .then((cache) => {
-        /*un console log.
-         un return que manda a el cache creado todas las urls almacenadas en urlsToCache,recordar que esta es una
-         constsante tipo arreglo que cree arriba, y luego  */
-        console.log("Caching files...");
-        return cache.addAll(urlsToCache)
+        /*el metodo then dice cuando obtengas una respuesta que es la memoria cache creado por el metodo open 
+        entonces , haga algo :    */
+        .then((cache) => {
+          /*un console log.
+          un return que manda a el cache creado todas las urls almacenadas en urlsToCache,recordar que esta es una
+          constsante tipo arreglo que cree arriba, y luego  */
+          console.log("Caching files...");
 
-        /*como caches es una promesa puedo poner N cantidad de then. 
-        Este segundo then me da el despleigue en consola de todas la url 
-        y cuando ya hizo esto le digo que se salga de aqui y que inice la activacion del
-        serviceworking: con el skipwiting,sin tener que abrir la pagina  */
-        .then(() => {
-          console.log("Archivos agregados al caché:", urlsToCache);
-          return self.skipWaiting();
-        });
-      })
-      .catch((err) => console.log("Falló registro de caché", err))
-  );
+          return(
+          cache.addAll(urlsToCache)
+
+            /*como caches es una promesa puedo poner N cantidad de then. 
+            Este segundo then me da el despleigue en consola de todas la url 
+            y cuando ya hizo esto le digo que se salga de aqui y que inice la activacion del
+            serviceworking: con el skipwiting,sin tener que abrir la pagina  */
+            .then(() => {
+                console.log("Archivos agregados al caché:", urlsToCache);
+                return self.skipWaiting();
+                })
+          );  
+
+        })
+        .catch((err) => console.log("Falló registro de caché", err))
+    );
+
 });
 
 
@@ -151,51 +156,58 @@ self.addEventListener("activate", (e) => {
   /*aqui creo un cahce limpio que guarda la mi memoria cache la cual deseo conservar */
   const cacheWhiteList = [CACHE_NAME];
   
-  /*este metodo espera a que todas las promesas se ejecuten para poder
-  activarse */
-  e.waitUntil(
-    /*este objeto hace referencia a todo lo que esta guardado en 
-    la memoria cache. cahes es palabra reservada */
-    caches
-      /*metodo keys permite obtener las claves o identificadores de 
-      cada memoria cache que estan almacenadas en el objeto cache.
-      .keys es una promesa */
-      .keys()
-      /*lo que espera es el parameto caheNames que contiene todos los nombres
-      de lo que esta almacenado dentro de la memoria cache.
-      en este caso tenemos otra funcion arrow y el  parametro cacheNames es el que se traslada
-      caheNames es palabra reservada y este objeto siempre lo devuelve .keys()*/
-      .then((cacheNames) => {
-        /*podemos usar una promesa dentro de otro el Promise.all permite ejecutar 
-        varias promesas en paralelo. Esto nos permite eliminar todas las meomorias
-        cache que no sirven y solo conserve la que nos interesa.*/
-        return Promise.all(
-          
-          /*la funcion .map permite recorrer un arreglo, en este caso el arreglo cacheNames */
-          cacheNames.map((cacheName) => {
+    /*este metodo espera a que todas las promesas se ejecuten para poder
+    activarse */
+    e.waitUntil(
+      /*este objeto hace referencia a todo lo que esta guardado en 
+      la memoria cache. cahes es palabra reservada */
+      caches
+        /*metodo keys permite obtener las claves o identificadores de 
+        cada memoria cache que estan almacenadas en el objeto cache.
+        .keys es una promesa */
+        .keys()
+        /*lo que espera es el parameto caheNames que contiene todos los nombres
+        de lo que esta almacenado dentro de la memoria cache.
+        en este caso tenemos otra funcion arrow y el  parametro cacheNames es el que se traslada
+        caheNames es palabra reservada y este objeto siempre lo devuelve .keys()*/
+        .then((cacheNames) => {
+            /*podemos usar una promesa dentro de otro el Promise.all permite ejecutar 
+            varias promesas en paralelo. Esto nos permite eliminar todas las meomorias
+            cache que no sirven y solo conserve la que nos interesa.*/
+            return Promise.all(
             
-            /*verifica que sie el nombre del (cahceName) que recorro es igual a la constante
-            cachewhitlist y si no es igual la elimina. Cuando la comparacion da -1 es qe no exite
-            El metodo .indexOf sirve para comprar el contenido de de dos arreglos*/
-            if (cacheWhiteList.indexOf(cacheName) === -1) {
-              /*elimino el cache que no me interesa */
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
+            /*la funcion .map permite recorrer un arreglo, en este caso el arreglo cacheNames */
+            cacheNames.map((cacheName) => {
+              
+              /*verifica que sie el nombre del (cahceName) que recorro es igual a la constante
+              cachewhitlist y si no es igual la elimina. Cuando la comparacion da -1 es qe no exite
+              El metodo .indexOf sirve para comprar el contenido de de dos arreglos*/
 
-      /*en las promesas se pueden tener varios then. que se ejecutaran aunque los anteriores
-       esen pendienes*/
-      .then(() => {
-       
-        console.log("Service Worker activo y listo para controlar clientes.");
+              if (cacheWhiteList.indexOf(cacheName) === -1) {
+                /*elimino el cache que no me interesa */
+                return caches.delete(cacheName);
+              }
+
+            })
+
+            );
         
-        /*este self.clients.claim() toma el control de todas las paginas y se aseguran 
-        que la cache este actualizada y se pueda consumir*/
-        return self.clients.claim();
-      })
-  );
+
+        })
+
+        /*en las promesas se pueden tener varios then. que se ejecutaran aunque los anteriores
+        esen pendienes*/
+        .then( () => {
+        
+          console.log("Service Worker activo y listo para controlar clientes.");
+          
+          /*este self.clients.claim() toma el control de todas las paginas y se aseguran 
+          que la cache este actualizada y se pueda consumir*/
+          return self.clients.claim();
+        })
+
+    );
+
 });
 
 /*Ahora tenemos que decirle a la aplicacion donde buscar el recurso imagenes u hojas externas
@@ -204,7 +216,7 @@ self.addEventListener("activate", (e) => {
  El evento fetch , que es palabra reservada, tiene como objetivo interceptar la solicitudes de red de la aplicacion
  y a si poder responder con los arachivos en la red o en el cache. Tomar en cuenta que primero busca en cache 
  y luego en la red,esto es para ahorrar tiempo.
- */
+ */0
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     /*cache es palabra reservada e indica el cache de la maquina. esto es el obejto cache */
@@ -235,7 +247,8 @@ self.addEventListener("fetch", (e) => {
 
         /*aqui lo que hago es hacer la peticion a la red, ya que 
         no esta en cache. y fetch,que es palabra reservada, es una  promesa */
-        return fetch(e.request)
+        return(
+           fetch(e.request)
         
         /*Esta palabra reservada me dice si obtengo la respuesta de la red*/ 
           .then((networkResponse) => {
@@ -249,48 +262,60 @@ self.addEventListener("fetch", (e) => {
             respuetas cuyo metodo de envio sea metodo "GET" es decir solicitudes a la 
             red. */
             if (
-              /*&& es el and */
-              e.request.method === "GET" &&
+                /*&& es el and */
+                e.request.method === "GET" &&
 
-              /*recordamos que ! es negacion. y le digo que extencionse chrome no 
-              me interesan  */
-              !e.request.url.startsWith("chrome-extension://") &&
+                /*recordamos que ! es negacion. y le digo que extencionse chrome no 
+                me interesan  */
+                !e.request.url.startsWith("chrome-extension://") &&
 
-              /*como esto ||  es un operador o entonces va en parentesis porque es uno 
-              o lo otro 
-              entonces legi que puede ser https es decir un lugar seguro  o 
-              que sea mi protocol handler o protocolo personalizado que lo tengo en 
-              el manifest y lo termianmos en el protocl-handler.js,que esta en la carpeta
-              contacto*/
-              (e.request.url.startsWith("https://") ||
-                e.request.url.startsWith("web+miapp://"))
+                /*como esto ||  es un operador o entonces va en parentesis porque es uno 
+                o lo otro 
+                entonces legi que puede ser https es decir un lugar seguro  o 
+                que sea mi protocol handler o protocolo personalizado que lo tengo en 
+                el manifest y lo termianmos en el protocl-handler.js,que esta en la carpeta
+                contacto*/
+                (e.request.url.startsWith("https://") ||
+                  
+                  e.request.url.startsWith("web+miapp://"))
 
-              ) {
-                /*aqui lo que hago es habrir mi cache cone l 
-                caches.open.
-                el parametro cache es el que tiene la respuesta que es
-                todo lo que tengo en mi CACHE_NAME */
-              caches.open(CACHE_NAME).then((cache) => {
+            ) 
 
-                /*Aqui agrego a mi memoria cache lo que estoy obteniendo*/
-                cache.put(e.request, clonedResponse);
-              });
-            }
+                {
+                  /*aqui lo que hago es habrir mi cache cone l 
+                  caches.open.
+                  el parametro cache es el que tiene la respuesta que es
+                  todo lo que tengo en mi CACHE_NAME */
+                  caches.open(CACHE_NAME).then((cache) => {
+
+                      /*Aqui agrego a mi memoria cache lo que estoy obteniendo*/
+                      cache.put(e.request, clonedResponse);
+                  });
+
+                }
+               /*Aqui termina el if  */
+
             return networkResponse;
+
+          }) /*aqui cierro el then */
+
+            /*Esto es cuando no obtengo el recurso del internet o no tengo internet
+            me devuelve el error presente*/
+          .catch((err) => {
+              console.error("Error fetching resource:", err);
           })
 
-          /*Esto es cuando no obtengo el recurso del internet o no tengo internet
-          me devuelve el error presente*/
-          .catch((err) => {
-            console.error("Error fetching resource:", err);
-          });
+        );    
+
       })
 
       /*esto es cuando busco un recurso en cache y no es encuentra */
       .catch((err) => {
         console.error("Error matching en caché", err);
       })
+
   );
+
 });
 
 
