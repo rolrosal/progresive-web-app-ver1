@@ -39,7 +39,7 @@ if(rawContactoId){
     /*elimino el texto siguiente de la constante*/
     /*lo que esta antes de la coma es lo que quiero quitara y luego despues de la coma lo que se va a meter
     en la variable*/
-    const contactoId= rawContactoId.replace("=web+micontacto://","")
+    const contactoId= rawContactoId.replace("web+micontacto://","")
     
     /*aqui quito el / y agrego un "" */
     contactoId=contactoId.replace("/","");
