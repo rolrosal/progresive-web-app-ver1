@@ -54,8 +54,10 @@ if(rawContactoId){
     en el indice */
         if (contactoId == 100){
             /**se modifica el elemento que tiene el id  */
+            console.log("estoy en 100");
             document.getElementById("contact-info").textContent="Nombre: Jose Rosales Monterroso";
         } else if (contactoId == 200){
+                    console.log("estoy en 200");
                     document.getElementById("contact-info").textContent="Nombre: Boby Fischer";
-                }
+                }                             
 }
