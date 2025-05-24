@@ -59,7 +59,7 @@ if(rawContactoId){
         } else if (contactoId == 200){
                     console.log("estoy en 200");
                    
-                    document.getElementById("contact-info").textContent=`Nombre: Boby Fischer`;
+                    document.getElementById("contact-info").textContent="Nombre: Boby Fischer";
                 }         
                           
 }
